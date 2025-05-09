@@ -1,4 +1,5 @@
-const http = require("http");
+import http from "http";
+import fs from "fs";
 
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method, req.headers);
@@ -14,7 +15,7 @@ const server = http.createServer((req, res) => {
                     </title>
                 </head>
                 <body>
-                    <form action="/redirector">
+                    <form action="/redirector" method="POST">
                         <label for="message">Message:</label>
                         <input type="text" id="message" placeholder="MESSAGE">
                         <input type="submit" value="Submit">
@@ -24,7 +25,14 @@ const server = http.createServer((req, res) => {
         `);
         return res.end();
     }
-    if (url === "/redirector" && method === "POST")
+    if (url === "/redirector" && method === "POST") {
+        fs.writeFileSync("message.txt", "DUMMY");
+        setTimeout(() => {
+            res.statusCode = 302;
+            res.setHeader('Location', '/');
+            return res.end();
+        }, 10000);
+    }
     res.write(`
         <html>
             <head>
