@@ -1,3 +1,6 @@
 export default function TabButton(props) {
-    return <li><button>{props.children}</button></li>;
+    const helloWorld = () => {
+        alert("Hello World!");
+    }
+    return <li><button onClick={helloWorld}>{props.children}</button></li>;
 };
