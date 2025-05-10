@@ -1,11 +1,14 @@
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import Header from "./components/header";
 import Component from "./components/component";
 import TabButton from "./components/tabButton";
+import { useState } from "react";
 
 function App() {
+  const [topic, setTopic] = useState('components');
+
   const handleClick = (value) => {
-    alert(value);
+    setTopic(value);
   };
 
   return (
@@ -26,11 +29,20 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onClick={() => handleClick("Component")}>Components</TabButton>
-            <TabButton onClick={() => handleClick("Props")}>Props</TabButton>
-            <TabButton onClick={() => handleClick("JSX")}>JSX</TabButton>
-            <TabButton onClick={() => handleClick("State")}>State</TabButton>
+            <TabButton onClick={() => handleClick("components")}>Components</TabButton>
+            <TabButton onClick={() => handleClick("props")}>Props</TabButton>
+            <TabButton onClick={() => handleClick("jsx")}>JSX</TabButton>
+            <TabButton onClick={() => handleClick("state")}>State</TabButton>
           </menu>
+          <div id="tab-content">
+            <h3>{EXAMPLES[topic].title}</h3>
+            <p>{EXAMPLES[topic].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[topic].code}
+              </code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
