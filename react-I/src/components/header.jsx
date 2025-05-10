@@ -1,4 +1,5 @@
 import reactImg from "../assets/react-core-concepts.png";
+import "./header.css"
 
 const textDesc = ['Fundamental', 'Crucial', 'Core', 'Rudimentary'];
 
