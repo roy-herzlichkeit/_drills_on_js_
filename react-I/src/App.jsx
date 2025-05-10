@@ -4,8 +4,8 @@ import Component from "./components/component";
 import TabButton from "./components/tabButton";
 
 function App() {
-  const handleClick = () => {
-    alert("Yamate kudasai!");
+  const handleClick = (value) => {
+    alert(value);
   };
 
   return (
@@ -26,10 +26,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onClick={handleClick}>Components</TabButton>
-            <TabButton onClick={handleClick}>Props</TabButton>
-            <TabButton onClick={handleClick}>JSX</TabButton>
-            <TabButton onClick={handleClick}>State</TabButton>
+            <TabButton onClick={() => handleClick("Component")}>Components</TabButton>
+            <TabButton onClick={() => handleClick("Props")}>Props</TabButton>
+            <TabButton onClick={() => handleClick("JSX")}>JSX</TabButton>
+            <TabButton onClick={() => handleClick("State")}>State</TabButton>
           </menu>
         </section>
       </main>
