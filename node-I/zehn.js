@@ -3,14 +3,14 @@ import bodyParser from "body-parser";
 
 const app = express();
 
-app.use(bodyParser.urlencoded())
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use("/name", (req, res, next) => {
     console.log(req.body.name);
     res.redirect("/");
 });
 
-app.use("/add-name", (req, res, next) => {
+app.post("/add-name", (req, res, next) => {
     res.send(`
         <form action="/name" method="POST">
             <input type="text" name="name">
