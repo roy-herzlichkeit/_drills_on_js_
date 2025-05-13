@@ -4,11 +4,11 @@ import root from '../utils/path.js'
 
 const router = express.Router();
 
-router.get("/add-name", (req, res, next) => {
+router.get("/add-product", (req, res, next) => {
     res.sendFile(path.join(root, '../', 'views', 'admin.html'));
 });
     
-router.post("/add-name", (req, res, next) => {
+router.post("/add-product", (req, res, next) => {
     console.log(req.body);
     res.redirect("/");
 });
