@@ -5,13 +5,13 @@ import Examples from "./components/examples";
 function App() {
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Concepts />
         <Examples />
       </main>
-    </div>
+    </>
   );
 }
 
