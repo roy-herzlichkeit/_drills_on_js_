@@ -1,4 +1,4 @@
-const Component = ({image, title, description}) => {
+const Concept = ({image, title, description}) => {
   return (
     <li>
       <img src={image} alt={title} />
@@ -8,4 +8,4 @@ const Component = ({image, title, description}) => {
   );
 }
 
-export default Component;
+export default Concept;

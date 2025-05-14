@@ -1,48 +1,15 @@
-import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import Header from "./components/header";
-import Component from "./components/component";
-import TabButton from "./components/tabButton";
-import { useState } from "react";
+import Concepts from "./components/concepts";
+import Examples from "./components/examples";
 
 function App() {
-  const [topic, setTopic] = useState();
-
-  const handleClick = (value) => {
-    setTopic(value);
-  };
 
   return (
     <div>
       <Header />
       <main>
-        <section id="core-concepts">
-          <h2>
-            Core Concepts
-          </h2>
-          <ul>
-            {CORE_CONCEPTS.map((item) => <Component key={item.title} {...item}/>)}
-          </ul>
-        </section>
-        <section id="examples">
-          <h2>Examples</h2>
-          <menu>
-            <TabButton isSelected={topic === "components"} onClick={() => handleClick("components")}>Components</TabButton>
-            <TabButton isSelected={topic === "props"} onClick={() => handleClick("props")}>Props</TabButton>
-            <TabButton isSelected={topic === "jsx"} onClick={() => handleClick("jsx")}>JSX</TabButton>
-            <TabButton isSelected={topic === "state"} onClick={() => handleClick("state")}>State</TabButton>
-          </menu>
-          <div id="tab-content">
-            {!topic ? <p>Please Select a Topic.</p> : <>
-            <h3>{EXAMPLES[topic].title}</h3>
-            <p>{EXAMPLES[topic].description}</p>
-            <pre>
-              <code>
-                {EXAMPLES[topic].code}
-              </code>
-            </pre>
-            </>}
-          </div>
-        </section>
+        <Concepts />
+        <Examples />
       </main>
     </div>
   );
