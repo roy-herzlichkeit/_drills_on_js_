@@ -1,1 +1,1 @@
-This is a Hands-on Project for Conceptual Practice in React.js taught by Maximilian Schwarzmüller on Udemy.
+This is a Hands-on Project for Conceptual Practice in React.js taught by Maximilian Schwarzmüller on Udemy. It is a TIC-TAC-TOE (noughts and crosses/কাটা কুটি) game.
