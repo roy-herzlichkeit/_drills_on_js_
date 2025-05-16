@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express-handlebars": "^8.0.1",
+    "pug": "^3.0.3"
+  }
+}
