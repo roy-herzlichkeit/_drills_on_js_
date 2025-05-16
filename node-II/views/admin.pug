@@ -1,30 +1,18 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title 404:PAGE_NOT_FOUND
-        link(rel="preconnect", href="https://fonts.googleapis.com")
-        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@18..144,300&display=swap")
-        link(rel="stylesheet", href="/style.css")
-    body.font_I 
-        header
-            nav 
-                ul 
-                    li
-                        a(href="/") HOMEPAGE 
-                    li 
-                        a(href="/admin/add-product") ADD PRODUCT
-        main 
-            h1 ADD NEW PRODUCT 
-            form(action="/admin/add-product", method="post") 
-                label(for="product-name") Product Name
-                input#product-name(type="text", name="name", placeholder="Enter product name", autocomplete="off", required)
-                label(for="product-price") Product Price 
-                input#product-price(type="number", name="price", placeholder="Enter price", step="0.01", min="0", autocomplete="off", required)
-                label(for="product-description") Product Description
-                textarea#product-description(name="description", placeholder="Enter product description", rows="4", autocomplete="off", required)
-                label(for="product-link") Product Link 
-                input#product-link(type="url", name="link", placeholder="Enter product details link", autocomplete="off")
-                button(type="submit") ADD PRODUCT
+extends layouts/layout.pug
+
+block head 
+    title ADD NEW PRODUCT
+
+block torso
+    main 
+        h1 ADD NEW PRODUCT 
+        form(action="/admin/add-product", method="post") 
+            label(for="product-name") Product Name
+            input#product-name(type="text", name="name", placeholder="Enter product name", autocomplete="off", required)
+            label(for="product-price") Product Price 
+            input#product-price(type="number", name="price", placeholder="Enter price", step="0.01", min="0", autocomplete="off", required)
+            label(for="product-description") Product Description
+            textarea#product-description(name="description", placeholder="Enter product description", rows="4", autocomplete="off", required)
+            label(for="product-link") Product Link 
+            input#product-link(type="url", name="link", placeholder="Enter product details link", autocomplete="off")
+            button(type="submit") ADD PRODUCT
