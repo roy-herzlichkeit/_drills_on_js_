@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 
 router.use((req, res, next) => {
     res.status(404);
-    res.sendFile(path.join(root, '../', 'views', '404.html'));
+    res.render('404')
 });
 
 export default router;
