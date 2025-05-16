@@ -5,12 +5,15 @@ import user from "./routes/user.js";
 import { fileURLToPath } from 'url';
 import { dirname } from "path";
 import path from "path";
+import expressHbs from "express-handlebars";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-app.set('view engine', 'pug');
+
+app.engine('hbs', expressHbs.engine({ extname: 'hbs', defaultLayout: false }));
+app.set('view engine', 'hbs');
 app.set('views', 'views')
 
 app.use(express.static(path.join(__dirname, 'public')));

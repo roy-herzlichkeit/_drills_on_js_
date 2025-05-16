@@ -6,12 +6,13 @@ import { data } from "./admin.js";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-    res.render('user', {products: data});
+    console.log(data, data.length > 0);
+    res.render('user', {products: data, pageTitle: "MyDrugs💊", path: "/", hasProducts: data.length > 0});
 });
 
 router.use((req, res, next) => {
     res.status(404);
-    res.render('404')
+    res.render('404.hbs', {pageTitle: "404: Cannot reach MyDrugs💊, Chooms!"})
 });
 
 export default router;
