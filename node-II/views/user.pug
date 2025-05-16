@@ -16,3 +16,20 @@ html(lang="en")
                         a(href="/") HOMEPAGE 
                     li 
                         a(href="/admin/add-product") ADD PRODUCT
+        main
+            h1 PRODUCTS
+            p List of all the products will appear here. Each product will be displayed with its details and options to view more information.
+            div.products-container
+                if products.length > 0
+                    div.product-grid
+                        each product in products
+                            div.product-item
+                                h3.product-title #{product.title}
+                                div.product-info
+                                    p.product-description #{product.description || 'No description available'}
+                                    div.product-price $#{product.price || '0.00'}
+                                div.product-actions
+                                    a(href=product.link || "#") VIEW DETAILS
+                else 
+                    p.no-products No products found. Add some products to see them listed here.
+

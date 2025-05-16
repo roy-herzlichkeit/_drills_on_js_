@@ -6,7 +6,7 @@ import { data } from "./admin.js";
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-    res.render('user');
+    res.render('user', {products: data});
 });
 
 router.use((req, res, next) => {
