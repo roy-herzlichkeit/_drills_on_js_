@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.engine('hbs', expressHbs.engine({ extname: 'hbs', defaultLayout: false }));
+app.engine('hbs', expressHbs.engine({ extname: 'hbs', layoutsDir: 'views/layouts/' , defaultLayout: 'main', extname: 'hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', 'views')
 
