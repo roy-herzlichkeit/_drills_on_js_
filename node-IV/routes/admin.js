@@ -1,15 +1,10 @@
 import express from "express";
+import { addProductGET, addProductPOST } from "../controllers/products.js";
 
 const router = express.Router();
-const products = [];
 
-router.get("/add-product", (req, res, next) => {
-    res.render('admin', {pageTitle: "MyDrugs💊: Admin", path: "/admin/add-product"});
-});
+router.get("/add-product", addProductGET);
     
-router.post("/add-product", (req, res, next) => {
-    products.push({title: req.body.name, price: req.body.price, description: req.body.description, link: req.body.link})
-    res.redirect("/");
-});
+router.post("/add-product", addProductPOST);
 
-export { router as routes, products as data};
+export default router;
