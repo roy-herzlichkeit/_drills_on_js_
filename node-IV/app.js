@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { routes, data } from "./routes/admin.js";
+import { routes } from "./routes/admin.js";
 import user from "./routes/user.js";
 import { fileURLToPath } from 'url';
 import { dirname } from "path";

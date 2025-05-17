@@ -1,6 +1,4 @@
 import express from "express";
-import path from 'path';
-import root from '../utils/path.js'
 
 const router = express.Router();
 const products = [];
