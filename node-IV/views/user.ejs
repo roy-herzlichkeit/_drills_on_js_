@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= pageTitle %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@18..144,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="font_I">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">HOMEPAGE</a></li>
+                <li><a href="/admin/add-product">ADD PRODUCT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>PRODUCTS</h1>
+        <% if (products.length > 0) { %>
+        <div class="products-container">
+            <div class="product-grid">
+                <% for (let product of products) { %>
+                <div class="product-item">
+                    <h3 class="product-title"><%= product.title %></h3>
+                    <div class="product-info">
+                        <p class="product-description"><%= product.description %></p>
+                        <div class="product-price"><%= product.price %></div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="<%= product.link %>">VIEW DETAILS</a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <% } else { %>
+        <p class="no-products">
+            No products found. Add some products to see them listed here.
+        </p>
+        <% } %>
+    </main>
+</body>
+
+</html>
