@@ -13,7 +13,7 @@
                     </div>
                     <% } %>
                     <div class="product-info">
-                        <p class="product-description"><%= product.description %></p>
+                        <p class="product-description"><%= product.description.substring(0, 25) %>...</p>
                         <div class="product-price"><%= product.price %></div>
                     </div>
                     <div class="product-actions">

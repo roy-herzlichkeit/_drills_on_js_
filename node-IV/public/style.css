@@ -261,12 +261,15 @@ button:active {
     flex-grow: 1;
     position: relative;
     min-height: 80px;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-description {
     margin: 0;
     color: #666;
     margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .product-price {
@@ -274,11 +277,12 @@ button:active {
     font-weight: bold;
     color: #333;
     margin-top: 10px;
-    display: inline-block;
+    display: block;
     background-color: #f0f0f0;
     padding: 5px 10px;
     border-radius: 4px;
     border-left: 4px solid black;
+    align-self: flex-start;
 }
 
 .product-actions {

@@ -1,23 +1,19 @@
-const products = [];
+import Product from '../models/product.js'
 
 const addProductGET = (req, res, next) => {
     res.render('admin', {pageTitle: "MyDrugs💊: Admin", path: "/admin/add-product"});
 }
 
 const addProductPOST = (req, res, next) => {
-    products.push({
-        title: req.body.name, 
-        price: req.body.price, 
-        description: req.body.description, 
-        image: req.body.image,
-        link: req.body.link
-    });
+    let product = new Product(req.body.title, req.body.price, req.body.description, req.body.image, req.body.link);
+    product.save();
     res.redirect("/");
 }
 
 const productsGET = (req, res, next) => {
+    const products = Product.fetchAll();
     console.log(products, products.length > 0);
     res.render('user', {products: products, pageTitle: "MyDrugs💊", path: "/", hasProducts: products.length > 0});
 };
 
-export {addProductGET, addProductPOST, productsGET, products as data};
+export {addProductGET, addProductPOST, productsGET};
