@@ -12,7 +12,6 @@ const addProductPOST = (req, res, next) => {
 
 const productsGET = (req, res, next) => {
     const products = Product.fetchAll();
-    console.log(products, products.length > 0);
     res.render('user', {products: products, pageTitle: "MyDrugs💊", path: "/", hasProducts: products.length > 0});
 };
 

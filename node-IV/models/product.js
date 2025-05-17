@@ -1,4 +1,6 @@
-const products = [];
+import root from "../utils/path.js";
+import path from "path";
+import fs from "fs";
 
 class Product {
     constructor(title, price, description, image, link) {
@@ -10,7 +12,20 @@ class Product {
     }
 
     save() {
-        products.push(this);
+        const p = path.join(root, '../data', 'products.json');
+        fs.readFile(p, (err, data) => {
+            console.log(err);
+            let products = [];
+            if (!err) {
+                products = JSON.parse(data);
+            }
+            products.push(this);
+            console.log(products);
+            fs.writeFile(p, JSON.stringify(products), (err) => {
+                console.log(err);
+                
+            })
+        });
     }
 
     static fetchAll() {
