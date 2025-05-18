@@ -1,0 +1,22 @@
+{
+  "name": "three-js-boilerplate-ts-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d ./dist"
+  },
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.13",
+    "@types/three": "^0.176.0",
+    "dat.gui": "^0.7.9",
+    "gh-pages": "^6.3.0",
+    "three": "^0.176.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-top-level-await": "^1.4.4"
+  }
+}
